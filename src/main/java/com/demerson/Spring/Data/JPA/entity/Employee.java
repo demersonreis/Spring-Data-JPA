@@ -25,8 +25,8 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "client")
-public class Client {
+@Table(name = "employee")
+public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -47,8 +47,15 @@ public class Client {
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataNascimento;
 
+	@Column(name = "data_admissao", nullable = false)
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate dataAdmissao;
+
+	@Column(name = "data_demissao")
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate dataDemissao;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id_fk", nullable = false)
 	private Address address;
-
 }
