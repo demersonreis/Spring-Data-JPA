@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,7 +30,9 @@ public class Employee extends Person {
 	@Column(name = "data_demissao")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataDemissao;
-	
-	
+
+	@ManyToOne
+	@JoinColumn(name = "cargo_id_fk", nullable = false)
+	private Office office;
 
 }

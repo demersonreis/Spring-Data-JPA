@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.demerson.Spring.Data.JPA.entity.Employee;
 import com.demerson.Spring.Data.JPA.entity.UF;
 import com.demerson.Spring.Data.JPA.repository.EmployeeRepository;
+import com.demerson.Spring.Data.JPA.repository.OfficeRepository;
 
 @Controller
 @RequestMapping("/funcionarios")
@@ -18,6 +19,9 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@Autowired
+	private OfficeRepository officeRepository;
 
 	@GetMapping
 	public ModelAndView home() {
@@ -37,6 +41,7 @@ public class EmployeeController {
 	public ModelAndView newClient() {
 		ModelAndView modelAndView = new ModelAndView("funcionario/formulario");
 		modelAndView.addObject("funcionario", new Employee());
+		modelAndView.addObject("cargos", officeRepository.findAll());
 		modelAndView.addObject("ufs", UF.values());
 		return modelAndView;
 	}
@@ -45,6 +50,7 @@ public class EmployeeController {
 	public ModelAndView edit(@PathVariable Long id) {
 		ModelAndView modelAndView = new ModelAndView("funcionario/formulario");
 		modelAndView.addObject("funcionario", employeeRepository.getReferenceById(id));
+		modelAndView.addObject("cargos", officeRepository.findAll());
 		modelAndView.addObject("ufs", UF.values());
 		return modelAndView;
 	}

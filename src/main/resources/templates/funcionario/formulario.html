@@ -75,16 +75,16 @@
                   </div>
                 </div>
 
-                <!--<div class="row">
+                <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
                       <label>Cargo</label>
-                      <select th:field="*{cargo}" class="form-control" style="width: 100%;">
+                      <select th:field="*{office}" class="form-control" style="width: 100%;">
                         <option th:each="cargo : ${cargos}" th:text="${cargo.nome}" th:value="${cargo.id}">Desenvolvedor(a) Front End Jr</option>
                       </select>
                     </div>
                   </div>
-                </div>-->
+                </div>
               </fieldset>
 
               <fieldset>
@@ -95,7 +95,7 @@
                 <div class="row">
                   <div class="col-md-4 col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.cep">CEP</label>
+                      <label for="address.cep">CEP</label>
                       <input type="text" class="form-control" placeholder="61626-365" th:field="*{address.cep}">
                     </div>
                   </div>
@@ -109,7 +109,7 @@
                   </div>
                   <div class="col-md-4 col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.cidade">Cidade</label>
+                      <label for="address.cidade">Cidade</label>
                       <input type="text" class="form-control" placeholder="Caucaia" th:field="*{address.cidade}">
                     </div>
                   </div>
@@ -118,19 +118,19 @@
                 <div class="row">
                   <div class="col-md-4 col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.bairro">Bairro</label>
+                      <label for="address.bairro">Bairro</label>
                       <input type="text" class="form-control" placeholder="Pacheco" th:field="*{address.bairro}">
                     </div>
                   </div>
                   <div class="col-md-4 col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.logradouro">Logradouro</label>
+                      <label for="address.logradouro">Logradouro</label>
                       <input type="text" class="form-control" placeholder="Rua Santo Antônio" th:field="*{address.logradouro}">
                     </div>
                   </div>
                   <div class="col-md-4 col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.numero">Número</label>
+                      <label for="address.numero">Número</label>
                       <input type="text" class="form-control" placeholder="283" th:field="*{address.numero}">
                     </div>
                   </div>
@@ -139,7 +139,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <label for="endereco.complemento">Complemento</label>
+                      <label for="address.complemento">Complemento</label>
                       <input type="text" class="form-control" placeholder="Quadra D" th:field="*{address.complemento}">
                     </div>
                   </div>
@@ -171,7 +171,7 @@
       $('#telefone').inputmask(
         {"mask": "(99) 99999-9999"}
       )
-      $('#endereco\\.cep').inputmask(
+      $('#address\\.cep').inputmask(
         {"mask": "99999-999"}
       )
     </script>

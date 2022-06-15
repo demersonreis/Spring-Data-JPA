@@ -31,13 +31,13 @@
                   <td th:text="${funcionario.nome}">Clara Giovana Daniela Duarte</td>
                   <td th:text="${funcionario.email}">clara_giovana@gmail.com</td>
                   <td th:text="${funcionario.telefone}">(96) 98195-9127</td>
-                  <td th:text="${funcionario.endereco.cidade}">Rio de Janeiro</td>
-                  <td th:text="${funcionario.endereco.uf}">RJ</td>
+                  <td th:text="${funcionario.address.cidade}">Rio de Janeiro</td>
+                  <td th:text="${funcionario.address.uf}">RJ</td>
                   <td th:text="${#temporals.format(funcionario.dataAdmissao)}">01/01/2020</td>
                   <td 
                     th:text="${funcionario.dataDemissao == null ? '-' : #temporals.format(funcionario.dataDemissao)}"
                   >01/01/2021</td>
-                <!--  <td th:text="${funcionario.cargo.nome}">Desenvolvedor(a) Front End Jr</td>-->
+                 <td th:text="${funcionario.office.nome}">Desenvolvedor(a) Front End Jr</td>
                   <td>
                     <div class="btn-group">
                       <a type="button" data-toggle="popover" data-placement="top" data-content="Detalhes" data-trigger="hover" class="btn btn-primary" th:href="@{/funcionarios/{id} (id=${funcionario.id})}">
