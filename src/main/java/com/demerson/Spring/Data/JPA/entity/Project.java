@@ -63,4 +63,7 @@ public class Project extends Entity {
 			inverseJoinColumns = @JoinColumn(name = "funcionario_id_fk")
 			)
 	private java.util.List<Employee> equipe;
+	
+	
+	
 }

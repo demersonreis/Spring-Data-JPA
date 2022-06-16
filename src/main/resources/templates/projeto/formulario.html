@@ -34,7 +34,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <textarea class="form-control" rows="4" th:field="*{descricao}"></textarea>
+                  <textarea class="form-control" rows="4" th:field="*{descricao}"></textarea>
                   </div>
                 </div>
               </div>
@@ -43,7 +43,7 @@
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
                     <label>Cliente</label>
-                    <select th:field="*{cliente}" class="form-control select2bs4" style="width: 100%;">
+                    <select th:field="*{client}" class="form-control select2bs4" style="width: 100%;">
                       <option th:each="cliente : ${clientes}" th:text="${cliente.nome}" th:value="${cliente.id}"></option>
                     </select>
                   </div>
@@ -76,14 +76,14 @@
               <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <label for="orcamentoEstimado">Orçamento estimado</label>
-                    <input type="text" class="form-control" th:field="*{orcamentoEstimado}">
+                    <label for="orcamentoEstimado">Orçamento </label>
+                    <input type="text" class="form-control" th:field="*{orcamento}">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                   <div class="form-group">
-                    <label for="totalGasto">Total gasto</label>
-                    <input type="text" class="form-control" th:field="*{totalGasto}">
+                    <label for="totalGasto">Gastos</label>
+                    <input type="text" class="form-control" th:field="*{gastos}">
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@
                   <div class="form-group">
                     <label>Equipe</label>
                     <select th:field="*{equipe}" multiple data-placeholder="Selecione a equipe" class="form-control select2bs4" style="width: 100%;">
-                      <option th:each="funcionario : ${funcionarios}" th:text="${funcionario.nome + ' - ' + funcionario.cargo.nome}" th:value="${funcionario.id}"></option>
+                      <option th:each="funcionario : ${funcionarios}" th:text="${funcionario.nome + ' - ' + funcionario.office.nome}" th:value="${funcionario.id}"></option>
                     </select>
                   </div>
                 </div>
@@ -119,8 +119,8 @@
         theme: 'bootstrap4'
       })
 
-      $('#orcamentoEstimado').mask('#.##0,00', {reverse: true});
-      $('#totalGasto').mask('#.##0,00', {reverse: true});
+      $('#orcamento').mask('#.##0,00', {reverse: true});
+      $('#gastos').mask('#.##0,00', {reverse: true});
     </script>
   </th:block>
 </body>
