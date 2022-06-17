@@ -47,9 +47,8 @@ public class ProjectController {
 		
 		modelAndView.addObject("projeto", new Project());
 		modelAndView.addObject("clientes", clientRepository.findAll());
-		modelAndView.addObject("lideres", employeeRepository.findAll());
-		modelAndView.addObject("funcionarios", employeeRepository.findAll());
-
+		modelAndView.addObject("lideres", employeeRepository.buscarPorCargo("Gerente"));
+		modelAndView.addObject("funcionarios", employeeRepository.buscarPorCargoExceto("Gerente"));
 		return modelAndView;
 	}
 
@@ -59,8 +58,8 @@ public class ProjectController {
 		
 		modelAndView.addObject("projeto", projectRepository.getReferenceById(id));	
 		modelAndView.addObject("clientes", clientRepository.findAll());
-		modelAndView.addObject("lideres", employeeRepository.findAll());
-		modelAndView.addObject("funcionarios", employeeRepository.findAll());
+		modelAndView.addObject("lideres", employeeRepository.buscarPorCargo("Gerente"));
+		modelAndView.addObject("funcionarios", employeeRepository.buscarPorCargoExceto("Gerente"));
 		return modelAndView;
 	}
 
